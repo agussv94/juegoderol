@@ -1,0 +1,43 @@
+public class Rol
+{
+    public static void main(String[] args) {
+    Pj pj1 = new Pj("Mago", 120, 30,2,A);
+    Pj pj2 = new Pj("Paladin", 230, 15,5,B);
+    Combate.Combatir(pj1, pj2);
+    }
+    }
+
+public class Pjs{
+String nombre; int vida; int gmax; int gmin; char equipo;
+    public Pj(){}
+    public Pj(String nombre, int vida, int gmax, int gmin, char equipo){
+    this.nombre = nombre;
+    this.vida= vida;
+    this.gmax= gmax;
+    this.gmin = gmin;
+    this.equipo = equipo;
+    }
+    public String getPj(){
+        String texto ="El.nombre del pj es" +this.nombre+, "su vida es" +vida+" y su golpe varia entre " +this.gmin+" y " +this.gmax+". pertenexe a equipo" +this.equipo ;
+        return texto;
+    }
+    }
+public class Combate{
+public void Combatir(Pjs pj1, Pjs pj2) {
+while (pj1.vida >= 0 && pj2.vida >=0) {
+    pj1.vida = pj1.vida - (int ) (Math.random() * (pj2.gmax + 1) )+ pj2.gmin );
+    if (pj1.vida<=0) {System.out.println ("gano pj2");
+    } else {
+    pj2.vida = pj2.vida - (int) (Math.random()* (pj1.gmax + 1) )+ pj1.gmin ;
+    if (pj2.vida<= 0) {
+        System.out.println("Gano pj1");
+    }
+}
+}
+}
+}
+    
+
+
+    
+    
